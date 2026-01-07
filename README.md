@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# Calm Canvas Portfolio
 
-## Project info
+Live site: https://babjikilaru.com
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+A focused portfolio for Babji Kilaru that highlights backend, cloud, and React work with motion-aware UI patterns, resumable navigation, and accessible forms.
 
-## How can I edit this code?
+## Tech stack
+- React + Vite + TypeScript for a fast, modern front end
+- Tailwind CSS with custom tokens and motion controls
+- Radix-based toast/tooltip primitives for feedback
+- React Router for in-page navigation and skip links
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+## Getting started
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Production build
+```sh
+npm run build
+npm run preview   # optional: serve the built assets locally
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## GitHub Pages deployment
+- Set the base path for your repo before building, e.g. `VITE_BASE_PATH=/portfolio/ npm run build` (defaults to `/` if unset).
+- The build creates `dist/404.html` automatically so GitHub Pages refreshes route requests correctly.
+- Deploy `dist/` to the `gh-pages` branch (for example with `git subtree push --prefix dist origin gh-pages` or your preferred workflow).
 
-**Use GitHub Codespaces**
+Notes:
+- The router uses `basename={import.meta.env.BASE_URL}` so it respects the configured base path.
+- Static assets (resume, OG image) resolve via the Vite base path to stay valid on subpaths.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Tests
+Basic component and navigation coverage is provided with Vitest and Testing Library.
+```sh
+npm test
+```
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Project notes
+- SEO and social metadata live in `index.html` and use `public/og-image.svg`.
+- The resume file is served from `public/resume.pdf` and is wired to the download CTA.
+- Toasts surface form submission feedback and resume download confirmation; tooltips hint at these actions.

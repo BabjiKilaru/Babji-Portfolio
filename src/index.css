@@ -88,11 +88,37 @@
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
 }
 
 @layer components {
   .nav-link {
-    @apply text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium text-sm;
+    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium text-sm;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-0.5 w-full bg-foreground rounded-full;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .nav-link-active {
+    @apply text-foreground;
+  }
+
+  .nav-link-active::after {
+    transform: scaleX(1);
   }
 
   .hero-button {
@@ -136,6 +162,73 @@
     @apply px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground 
            hover:bg-accent transition-colors duration-150 cursor-pointer block;
   }
+
+  .interactive-dropdown {
+    @apply relative bg-card rounded-2xl p-2 min-w-[220px] border border-border/50;
+    box-shadow: 0 14px 30px -14px hsl(0 0% 0% / 0.22), 0 12px 20px -16px hsl(0 0% 0% / 0.18);
+  }
+
+  .interactive-highlight {
+    @apply absolute left-2 right-2 rounded-xl bg-foreground/5;
+    pointer-events: none;
+    box-shadow: var(--dropdown-shadow);
+    transition:
+      transform 180ms ease,
+      height 180ms ease,
+      opacity 160ms ease;
+  }
+
+  .interactive-item {
+    @apply relative w-full text-left px-4 py-3 text-sm font-medium text-muted-foreground rounded-xl
+           flex items-center gap-3 outline-none transition-all duration-200;
+  }
+
+  .interactive-item:hover,
+  .interactive-item:focus-visible {
+    @apply text-foreground;
+    transform: translateX(4px);
+    box-shadow: 0 10px 25px -16px hsl(0 0% 0% / 0.35);
+  }
+
+  .interactive-item:active {
+    transform: translateX(6px) scale(0.995);
+  }
+
+  .header-elevated {
+    @apply bg-foreground/5 backdrop-blur-sm border border-border/60;
+    box-shadow: 0 12px 26px -18px hsl(0 0% 0% / 0.38);
+    border-radius: 1rem;
+  }
+
+  .header-elevated-scrolled {
+    box-shadow: 0 14px 30px -16px hsl(0 0% 0% / 0.45);
+    background-color: hsl(var(--background) / 0.92);
+  }
+
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus-visible {
+    @apply not-sr-only;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 50;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--dropdown-shadow);
+  }
+
+  .section-anchor {
+    scroll-margin-top: 96px;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-border bg-card px-3 py-3 text-foreground placeholder:text-muted-foreground/70 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
 }
 
 @layer utilities {
@@ -146,6 +239,18 @@
   .loading-spinner::after {
     content: '';
     @apply absolute w-2 h-2 bg-foreground rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
 

@@ -1,3 +1,5 @@
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
+
 interface Skill {
   name: string;
   tier: 'primary' | 'secondary' | 'tertiary';
@@ -36,7 +38,26 @@ const skills: Skill[] = [
 ];
 
 const FloatingSkills = ({ isVisible }: { isVisible: boolean }) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   if (!isVisible) return null;
+
+  if (prefersReducedMotion) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="grid grid-cols-2 gap-3 bg-background/90 border border-border rounded-2xl p-4 shadow-sm">
+          {skills.slice(0, 8).map((skill) => (
+            <span
+              key={skill.name}
+              className="inline-flex items-center justify-center px-3 py-2 rounded-xl bg-secondary text-sm text-foreground/90"
+            >
+              {skill.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

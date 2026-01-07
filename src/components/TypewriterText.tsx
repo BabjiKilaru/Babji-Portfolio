@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 
 const roles = [
   'Software Engineer',
@@ -12,8 +13,17 @@ const TypewriterText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      setDisplayText(roles[0]);
+    }
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
     const currentRole = roles[currentIndex];
     const typingSpeed = isDeleting ? 30 : 80;
     const pauseTime = isDeleting ? 100 : 2000;
@@ -38,12 +48,12 @@ const TypewriterText = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentIndex]);
+  }, [displayText, isDeleting, currentIndex, prefersReducedMotion]);
 
   return (
     <span className="inline-flex items-center">
       <span>{displayText}</span>
-      <span className="ml-1 w-0.5 h-6 bg-foreground animate-pulse" />
+      {!prefersReducedMotion && <span className="ml-1 w-0.5 h-6 bg-foreground animate-pulse" />}
     </span>
   );
 };

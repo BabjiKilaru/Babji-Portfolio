@@ -1,15 +1,16 @@
-import { useState, useEffect } from 'react';
 import { ArrowRight, MapPin, Briefcase } from 'lucide-react';
 import TypewriterText from './TypewriterText';
 import FloatingSkills from './FloatingSkills';
 import SocialLinks from './SocialLinks';
 import portrait from '@/assets/portrait.png';
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 
 const HeroSection = () => {
-  const [showContent, setShowContent] = useState(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const showContent = !prefersReducedMotion;
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden section-anchor">
       {/* Left Content */}
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-center min-h-screen py-24 lg:py-0">
@@ -46,10 +47,17 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="mb-8">
-              <a href="#about" className="hero-button group">
-                <span>Learn More</span>
+            <div className="mb-8 flex flex-wrap gap-3">
+              <a href="#projects" className="hero-button group">
+                <span>View Projects</span>
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <span>Book a call</span>
+                <ArrowRight className="w-5 h-5" />
               </a>
             </div>
 
