@@ -26,6 +26,7 @@ npm run preview   # optional: serve the built assets locally
 - Set the base path for your repo before building, e.g. `VITE_BASE_PATH=/portfolio/ npm run build` (defaults to `/` if unset).
 - The build creates `dist/404.html` automatically so GitHub Pages refreshes route requests correctly.
 - Deploy `dist/` to the `gh-pages` branch (for example with `git subtree push --prefix dist origin gh-pages` or your preferred workflow).
+- Or run `npm run deploy` (defaults base path to `/calm-canvas-portfolio/`; override with `VITE_BASE_PATH` if your repo name differs).
 
 Notes:
 - The router uses `basename={import.meta.env.BASE_URL}` so it respects the configured base path.
