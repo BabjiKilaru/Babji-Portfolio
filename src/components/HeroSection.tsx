@@ -30,16 +30,14 @@ const HeroSection = () => {
 
               {/* Description */}
               <p className="text-base lg:text-lg text-muted-foreground max-w-lg leading-relaxed">
-                Software engineer & problem solver.{' '}
-                <span className="font-medium text-foreground">Engineer</span> by skill,{' '}
-                <span className="font-medium text-foreground">problem-solver</span> by mindset. I build scalable backend and cloud-native systems that make a real impact.
+                Full Stack Software Engineer who builds secure, scalable web applications and cloud-native services using Java/Spring Boot, React/Angular, and modern API design. I enjoy turning complex requirements into clean, reliable systems with strong performance, testing, and automation.
               </p>
 
               {/* Location & Availability */}
               <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
-                  <span>Sunnyvale, CA</span>
+                  <span>Edison, NJ</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Briefcase className="w-4 h-4" />

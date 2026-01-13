@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 
 const roles = [
-  'Software Engineer',
-  'Java Developer',
-  'React Developer',
+  'Full Stack Software Engineer',
+  'Java/Spring Boot Developer',
+  'React & Angular Engineer',
   'Cloud & Backend Developer',
-  'Problem Solver',
+  'API & Microservices Builder',
 ];
 
 const TypewriterText = () => {

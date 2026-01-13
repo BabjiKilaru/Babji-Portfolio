@@ -10,27 +10,27 @@ type EducationItem = {
 
 const educationData: EducationItem[] = [
   {
-    degree: 'Master of Science in Computer Science',
+    degree: 'Master’s in Computer Science',
     university: 'University of Missouri–Kansas City',
-    location: 'USA',
+    location: 'Kansas City, MO',
     dates: 'Aug 2022 – May 2024',
     bullets: [
-      'Advanced coursework in distributed systems, cloud computing, and data engineering.',
-      'Built full-stack and backend projects using Java/Spring Boot and modern web tooling.',
-      'Focus on scalable APIs, databases, and system design foundations.',
-      'Capstone/projects emphasizing reliability, performance, and clean architecture.',
+      'GPA: 3.68 / 4.00.',
+      'Coursework across distributed systems, cloud computing, and data engineering.',
+      'Projects with Java/Spring Boot microservices, scalable APIs, and data pipelines.',
+      'Applied CI/CD, Docker, and performance tuning for reliable delivery.',
     ],
   },
   {
-    degree: 'B.Tech in Computer Science and Engineering',
-    university: 'SRM University, AP',
-    location: 'India',
+    degree: 'Bachelor’s in Computer Science and Engineering',
+    university: 'SRM University',
+    location: 'Amaravati, AP, India',
     dates: 'Jul 2018 – May 2022',
     bullets: [
-      'Strong CS fundamentals: data structures, algorithms, OOP, and DBMS.',
-      'Built web applications and backend services; practiced REST API development.',
-      'Team projects with Agile collaboration and code reviews.',
-      'Coursework/projects in operating systems, networking, and software engineering.',
+      'GPA: 3.60 / 4.00.',
+      'Strengthened CS fundamentals: data structures, algorithms, OOP, and DBMS.',
+      'Built web apps and backend services with REST APIs and database integration.',
+      'Collaborated via Agile ceremonies, code reviews, and documentation.',
     ],
   },
 ];

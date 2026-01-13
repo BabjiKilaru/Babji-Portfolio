@@ -89,10 +89,10 @@ export const AboutSection = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold uppercase">ABOUT ME</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                I&apos;m Babji Kilaru, focused on building scalable Java/Spring Boot microservices, secure REST/GraphQL APIs, and cloud-native deployments on AWS with Docker and Kubernetes. I partner with teams to ship reliable backends, CI/CD pipelines, and frontends in React or Angular that stay accessible and performant.
+                I&apos;m Babji Kilaru, a Full Stack Software Engineer focused on building scalable Java/Spring Boot + Hibernate microservices, secure REST/GraphQL APIs, and cloud-native deployments on AWS or Azure with Docker and CI/CD automation. I ship reliable backends, reusable React or Angular frontends, and data layers that stay optimized across PostgreSQL, MySQL, Oracle, and MongoDB.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I enjoy translating requirements into resilient architectures, instrumenting services for observability, and iterating quickly with automated tests and delivery workflows.
+                I enjoy translating requirements into resilient architectures, integrating event-driven patterns with Kafka or AWS SQS, and iterating quickly with automated tests, GitHub Actions pipelines, and performance tuning to keep services observable and responsive.
               </p>
             </div>
 
@@ -131,20 +131,20 @@ export const SkillsSection = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const skillGroups = [
     {
-      title: 'Languages',
-      items: ['Java', 'TypeScript', 'JavaScript', 'Python', 'SQL'],
+      title: 'Programming & Frameworks',
+      items: ['Java', 'Python', 'J2EE', 'Spring Boot', 'Spring MVC', 'Hibernate', 'JDBC', 'SQL', 'PL/SQL'],
     },
     {
-      title: 'Frameworks',
-      items: ['Spring Boot', 'React', 'Node.js', 'FastAPI', 'Express'],
+      title: 'Frontend',
+      items: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React.js', 'Angular', 'Bootstrap', 'UI/UX Design', 'Responsive Web Design'],
     },
     {
       title: 'Cloud & DevOps',
-      items: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins'],
+      items: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD', 'GitHub Actions', 'GitLab CI/CD'],
     },
     {
       title: 'Databases',
-      items: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Redis'],
+      items: ['MySQL', 'Oracle', 'SQL Server', 'MongoDB'],
     },
   ];
 
@@ -193,39 +193,36 @@ export const SkillsSection = () => {
 export const ExperienceSection = () => {
   const experiences = [
     {
-      role: 'Senior Software Engineer',
-      company: 'Nimbus Systems',
-      dates: '2022 — Present',
-      location: 'Sunnyvale, CA',
-      summary: 'Led backend modernization and observability for cloud-native services.',
+      role: 'Software Engineer II',
+      company: 'Wells Fargo',
+      dates: 'May 2024 – Present',
+      location: 'Edison, NJ',
+      summary:
+        'Building resilient payment microservices, cloud migrations, and reusable UI components with a metrics-first mindset.',
       highlights: [
-        'Rebuilt a Java monolith into Spring Boot microservices, cutting deployment lead time by 60%.',
-        'Designed event-driven pipelines with Kafka that reduced data latency from minutes to seconds.',
-        'Introduced SLO dashboards and alerting, improving incident MTTR by 35%.',
+        'Designed and implemented highly scalable microservices using Java Spring Boot and Hibernate, enhancing payment transaction reliability by 30% during peak load hours and ensuring seamless integration between multiple distributed services.',
+        'Migrated on-prem workloads to AWS Lambda and ECS, reducing infrastructure costs by 22% and improving scalability.',
+        'Built reusable front-end components using React.js, TypeScript, and Material UI, reducing UI development time by 35% and improving accessibility.',
+        'Integrated Apache Kafka and AWS SQS for event-driven communication, improving responsiveness by 55% and supporting near real-time processing.',
+        'Automated CI/CD with GitHub Actions, Docker, and Maven, improving release cycles by 45%.',
+        'Improved performance via Redis caching and DB query optimization, reducing response times by 38%.',
+        'Conducted API testing with Postman and JUnit; reduced production defects.',
+        'Partnered with DevOps, QA, and Product; maintained code quality via reviews and Agile ceremonies.',
       ],
     },
     {
       role: 'Software Engineer',
-      company: 'FinEdge',
-      dates: '2020 — 2022',
-      location: 'San Francisco, CA',
-      summary: 'Owned API surface area and developer experience for customer-facing apps.',
+      company: 'PwC',
+      dates: 'May 2020 – Jul 2022',
+      location: 'Hyderabad, India',
+      summary: 'Delivered claims-processing APIs, security hardening, and dashboards across healthcare units.',
       highlights: [
-        'Shipped GraphQL/REST gateways consumed by 6+ teams with versioned contracts and linting.',
-        'Implemented CI/CD with blue-green deployments, cutting release rollback risk to near-zero.',
-        'Collaborated with design to build React interfaces with a11y-first components.',
-      ],
-    },
-    {
-      role: 'Full-Stack Developer',
-      company: 'Product Studio',
-      dates: '2018 — 2020',
-      location: 'Remote',
-      summary: 'Delivered client projects across web, data, and integrations.',
-      highlights: [
-        'Built FastAPI services that handled 50k+ daily requests with zero-downtime releases.',
-        'Optimized SQL queries and caching, reducing page load times by up to 45%.',
-        'Mentored junior developers on testing strategies and code reviews.',
+        'Designed and deployed Spring Boot + Hibernate claims-processing APIs, increasing throughput by 42%, supporting 60+ concurrent users, and reducing production outages.',
+        'Implemented OAuth2, JWT, and RBAC policies; improved HIPAA-aligned controls across a healthcare claims environment processing 1.5B+ annual claim volume.',
+        'Modernized a J2EE monolith into microservices; decreased complexity by 50%, saved 20+ hours/week, improved release velocity by 30%.',
+        'Built React dashboards and analytics for 6 business units; accelerated decision cycles by 30% and supported 1M+ annual member interactions.',
+        'Optimized PostgreSQL via indexing/caching/query tuning; reduced latency by 38%.',
+        'Built CI/CD with Jenkins and GitHub Actions; reduced deployments from 3 days to under 6 hours; improved reliability by 95%.',
       ],
     },
   ];
@@ -271,22 +268,22 @@ export const ExperienceSection = () => {
 export const EducationSection = () => {
   const education = [
     {
-      degree: 'Master of Science, Computer Science',
-      school: 'San Jose State University',
-      dates: '2016 — 2018',
-      focus: 'Distributed systems, data engineering, and product delivery.',
+      degree: 'Master’s in Computer Science',
+      school: 'University of Missouri–Kansas City',
+      dates: 'Aug 2022 – May 2024',
+      focus: 'Kansas City, MO — GPA: 3.68 / 4.00',
     },
     {
-      degree: 'Bachelor of Technology, Computer Science',
-      school: 'JNTU Hyderabad',
-      dates: '2012 — 2016',
-      focus: 'Algorithms, operating systems, and software engineering.',
+      degree: 'Bachelor’s in Computer Science and Engineering',
+      school: 'SRM University',
+      dates: 'Jul 2018 – May 2022',
+      focus: 'Amaravati, AP, India — GPA: 3.60 / 4.00',
     },
   ];
 
   const certifications = [
-    'AWS Certified Developer — Associate',
-    'Oracle Certified Professional, Java',
+    'Python Institute Certified Associate Python Programmer',
+    'AWS Certified Developer – Associate',
   ];
 
   return (
@@ -338,22 +335,16 @@ export const EducationSection = () => {
 export const CertificationsSection = () => {
   const certifications = [
     {
-      name: 'AWS Certified Developer — Associate',
+      name: 'Python Institute Certified Associate Python Programmer',
+      issuer: 'Python Institute',
+      year: '—',
+      credentialUrl: 'https://pythoninstitute.org/certification/certified-associate-python-programmer',
+    },
+    {
+      name: 'AWS Certified Developer – Associate',
       issuer: 'Amazon Web Services',
-      year: '2023',
+      year: '—',
       credentialUrl: 'https://aws.amazon.com/certification/',
-    },
-    {
-      name: 'Oracle Certified Professional, Java SE',
-      issuer: 'Oracle',
-      year: '2022',
-      credentialUrl: 'https://education.oracle.com/java',
-    },
-    {
-      name: 'CKA: Certified Kubernetes Administrator',
-      issuer: 'CNCF',
-      year: '2021',
-      credentialUrl: 'https://www.cncf.io/certification/cka/',
     },
   ];
 
@@ -552,8 +543,8 @@ export const ResumeSection = () => {
 export const ContactSection = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sent'>('idle');
-  const contactEmail = 'hello@babjikilaru.com';
-  const contactPhone = '+1 (555) 123-4567';
+  const contactEmail = 'babji.kilaru9@gmail.com';
+  const contactPhone = '+1 (408) 304-6681';
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();

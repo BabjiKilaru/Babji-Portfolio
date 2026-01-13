@@ -9,6 +9,21 @@ type Category = { key: string; label: string; skills: SkillItem[] };
 
 const categories: Category[] = [
   {
+    key: 'programming',
+    label: 'Programming & Frameworks',
+    skills: [
+      { name: 'Java' },
+      { name: 'Python' },
+      { name: 'J2EE' },
+      { name: 'Spring Boot' },
+      { name: 'Spring MVC' },
+      { name: 'Hibernate' },
+      { name: 'JDBC' },
+      { name: 'SQL' },
+      { name: 'PL/SQL' },
+    ],
+  },
+  {
     key: 'frontend',
     label: 'Frontend',
     skills: [
@@ -17,35 +32,17 @@ const categories: Category[] = [
       { name: 'JavaScript' },
       { name: 'TypeScript' },
       { name: 'React.js' },
-      { name: 'Next.js' },
       { name: 'Angular' },
-      { name: 'Material UI' },
       { name: 'Bootstrap' },
-      { name: 'Tailwind CSS' },
       { name: 'Responsive Web Design' },
-      { name: 'WCAG Accessibility' },
-    ],
-  },
-  {
-    key: 'backend',
-    label: 'Backend',
-    skills: [
-      { name: 'Java' },
-      { name: 'Spring Boot' },
-      { name: 'J2EE' },
-      { name: 'Hibernate' },
-      { name: 'Node.js' },
-      { name: 'Express.js' },
-      { name: 'Python' },
-      { name: 'FastAPI' },
-      { name: 'Microservices' },
+      { name: 'UI/UX Design' },
     ],
   },
   {
     key: 'apis',
-    label: 'APIs & Security',
+    label: 'Security & API',
     skills: [
-      { name: 'RESTful APIs' },
+      { name: 'RESTful Services' },
       { name: 'GraphQL' },
       { name: 'OAuth2' },
       { name: 'JWT' },
@@ -63,38 +60,41 @@ const categories: Category[] = [
       { name: 'Azure' },
       { name: 'Docker' },
       { name: 'Kubernetes' },
-      { name: 'Terraform' },
-      { name: 'GitHub Actions' },
-      { name: 'Jenkins' },
       { name: 'GitLab CI/CD' },
+      { name: 'GitHub Actions' },
+      { name: 'CI/CD' },
     ],
   },
   {
     key: 'databases',
     label: 'Databases',
     skills: [
-      { name: 'PostgreSQL' },
       { name: 'MySQL' },
       { name: 'Oracle' },
       { name: 'MongoDB' },
-      { name: 'Redis' },
       { name: 'SQL Server' },
-      { name: 'Data Modeling' },
-      { name: 'Query Optimization' },
-      { name: 'Caching Strategies' },
     ],
   },
   {
     key: 'testing',
-    label: 'Testing & Quality',
+    label: 'Testing/Performance + Tools',
     skills: [
       { name: 'JUnit' },
       { name: 'Mockito' },
       { name: 'Selenium' },
-      { name: 'Cypress' },
       { name: 'Load Testing' },
-      { name: 'Code Coverage' },
-      { name: 'TDD/BDD' },
+      { name: 'Performance Tuning' },
+      { name: 'Git' },
+      { name: 'GitHub' },
+      { name: 'GitLab' },
+      { name: 'Bitbucket' },
+      { name: 'Maven' },
+      { name: 'Agile (Scrum/Kanban)' },
+      { name: 'JIRA' },
+      { name: 'Confluence' },
+      { name: 'Code Reviews' },
+      { name: 'Sprint Planning' },
+      { name: 'Cross-Functional Collaboration' },
     ],
   },
 ];
@@ -198,7 +198,7 @@ const SkillLogo = ({ name }: { name: string }) => {
 };
 
 const SkillsSection = () => {
-  const [activeKey, setActiveKey] = useState<string>('frontend');
+  const [activeKey, setActiveKey] = useState<string>('programming');
   const [visibleSlots, setVisibleSlots] = useState<number>(() => {
     if (typeof window === 'undefined') return 12;
     if (window.matchMedia('(min-width: 1024px)').matches) return 12;

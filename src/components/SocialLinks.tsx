@@ -47,7 +47,7 @@ const SocialLinks = ({ onContainerMeasured }: SocialLinksProps) => {
           <Linkedin className="w-5 h-5" />
         </a>
         <a
-          href="mailto:hello@babjikilaru.com"
+          href="mailto:babji.kilaru9@gmail.com"
           className="social-icon social-icon-fixed"
           aria-label="Email"
         >
@@ -76,7 +76,7 @@ const SocialLinks = ({ onContainerMeasured }: SocialLinksProps) => {
           <Linkedin className="w-5 h-5" />
         </a>
         <a
-          href="mailto:hello@babjikilaru.com"
+          href="mailto:babji.kilaru9@gmail.com"
           className="social-icon"
           aria-label="Email"
         >
