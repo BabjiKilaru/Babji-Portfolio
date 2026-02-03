@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "postbuild": "cp dist/index.html dist/404.html",
-    "deploy": "VITE_BASE_PATH=${VITE_BASE_PATH:-/Babji-Portfolio/} npm run build && gh-pages -d dist -b gh-pages -r https://github.com/BabjiKilaru/Babji-Portfolio.git"    "lint": "eslint .",
+    "build": "OUT_DIR=${BUILD_OUT_DIR:-build}; vite build --outDir \"$OUT_DIR\"",
+    "build:dev": "OUT_DIR=${BUILD_OUT_DIR:-build}; vite build --mode development --outDir \"$OUT_DIR\"",
+    "postbuild": "OUT_DIR=${BUILD_OUT_DIR:-build}; cp \"$OUT_DIR/index.html\" \"$OUT_DIR/404.html\"",
+    "deploy": "OUT_DIR=${BUILD_OUT_DIR:-build}; VITE_BASE_PATH=${VITE_BASE_PATH:-/Babji-Portfolio/} BUILD_OUT_DIR=\"$OUT_DIR\" npm run build && gh-pages -d \"$OUT_DIR\" -b gh-pages -r https://github.com/BabjiKilaru/Babji-Portfolio.git",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "preview": "vite preview"
